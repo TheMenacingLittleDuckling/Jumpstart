@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cddbnotqrnmjl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_28poe"]
+
+[sub_resource type="GDScript" id="GDScript_8b25v"]
+resource_name = "moving_platform.gd"
+script/source = "extends AnimatableBody2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y32ns"]
+load_path = "res://.godot/imported/platform.webp-51d0bff8674cd14db5e5a2a290f9901e.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=741562277]
+
+[node name="MovingPlatform" type="AnimatableBody2D" parent="." unique_id=1394513575]
+physics_material_override = SubResource("PhysicsMaterial_28poe")
+script = SubResource("GDScript_8b25v")
+
+[node name="Platform2" type="Sprite2D" parent="." unique_id=1940407372]
+position = Vector2(44, -17)
+texture = SubResource("CompressedTexture2D_y32ns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1712937366]
+shape = SubResource("RectangleShape2D_epypp")
